@@ -44,7 +44,7 @@ export function TaskCard({ task, onEdit, onDelete }: TaskCardProps) {
     new Date(task.dueDate) < new Date(new Date().setHours(0, 0, 0, 0));
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow transition-shadow p-4 group relative">
+    <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4 group relative task-card-glow">
       <div className="flex justify-between items-start mb-2">
         <div className="flex items-center space-x-2">
           <span

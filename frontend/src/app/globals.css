@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    /* Base Backgrounds (Warm organic stone) */
-    --color-background: #fff8f5;
+    /* Base Backgrounds (Porcelain Executive Kanban) */
+    --color-background: #faf8ff;
     --color-surface: #ffffff;
-    --color-surface-hover: #f0e6e0;
+    --color-surface-hover: #f2f3ff;
     
-    /* Text Colors (Deep slate/navy hierarchy) */
-    --color-text-primary: #1f1b17;
-    --color-text-secondary: #43474e;
+    /* Text Colors */
+    --color-text-primary: #131b2e;
+    --color-text-secondary: #464555;
     
     /* Borders and Dividers */
-    --color-border: #eae1da;
+    --color-border: #dae2fd;
     
-    /* Primary Accents (Rich navy/indigo) */
-    --color-primary: #1e3a5f;
-    --color-primary-hover: #022448;
+    /* Primary Accents (Royal Indigo) */
+    --color-primary: #4f46e5;
+    --color-primary-hover: #3323cc;
     
     /* Status Colors */
-    --color-success: #166534; /* Keep existing muted success */
-    --color-warning: #b45309; /* Stitch suggested warm amber */
-    --color-error: #ba1a1a;   /* Stitch suggested rose crimson */
+    --color-success: #059669; 
+    --color-warning: #d97706; 
+    --color-error: #e11d48;   
   }
 }
 
@@ -40,5 +40,21 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .frosted-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+  
+  .task-card-glow {
+    transition: all 0.2s ease-out;
+  }
+  
+  .task-card-glow:hover {
+    box-shadow: 0 10px 25px -4px rgba(79, 70, 229, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04);
+    border-color: rgba(79, 70, 229, 0.35);
+    transform: translateY(-2px);
   }
 }
