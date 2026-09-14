@@ -12,7 +12,6 @@ import { Pagination } from "../../components/Pagination";
 import { Modal } from "../../components/Modal";
 import { TaskForm, TaskFormData } from "../../components/TaskForm";
 import { ConfirmDialog } from "../../components/ConfirmDialog";
-import ThemeToggle from "../../components/ThemeToggle";
 
 export default function DashboardPage() {
   const { user, isAuthenticated, isLoading: isAuthLoading, logout } = useAuth();
@@ -171,7 +170,7 @@ export default function DashboardPage() {
                 <span className="text-sm text-gray-600 font-medium mr-2">
                   {user?.name}
                 </span>
-                <ThemeToggle />
+
                 <button
                   onClick={logout}
                   className="text-gray-400 hover:text-gray-600 p-1.5 rounded-full hover:bg-gray-100 transition-colors"

@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ThemeToggle from "../components/ThemeToggle";
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 24 },
@@ -45,7 +44,6 @@ export default function LandingPage() {
             >
               Get Started
             </Link>
-            <ThemeToggle />
           </div>
         </div>
       </nav>
