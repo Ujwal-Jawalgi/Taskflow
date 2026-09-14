@@ -24,7 +24,7 @@ const staggerContainer = {
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-background overflow-hidden selection:bg-primary-100 selection:text-primary-900">
+    <div className="min-h-screen bg-background overflow-hidden">
       {/* Navigation */}
       <nav className="w-full border-b border-neutral-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -50,7 +50,13 @@ export default function LandingPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="pt-24 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <section className="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          {/* Decorative background blobs */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-3xl opacity-30 pointer-events-none blur-3xl">
+            <div className="absolute top-0 left-0 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter"></div>
+            <div className="absolute top-0 right-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter"></div>
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter"></div>
+          </div>
           <motion.div
             className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center"
             initial="hidden"
@@ -103,7 +109,7 @@ export default function LandingPage() {
                     <div className="font-semibold text-neutral-900">
                       Q3 Marketing Launch
                     </div>
-                    <span className="px-2.5 py-1 text-xs font-medium bg-primary-50 text-primary-700 rounded-full">
+                    <span className="px-2.5 py-1 text-xs font-medium bg-red-50 text-red-700 rounded-full border border-red-100">
                       High Priority
                     </span>
                   </div>
@@ -172,18 +178,48 @@ export default function LandingPage() {
                     app.taskflow.com/dashboard
                   </div>
                 </div>
-                {/* Screenshot Container */}
-                <div className="relative aspect-[16/10] bg-neutral-100">
-                  <Image
-                    src="/dashboard-screenshot.png"
-                    alt="TaskFlow Dashboard Interface"
-                    fill
-                    className="object-cover"
-                    onError={(e: any) => {
-                      e.currentTarget.srcset =
-                        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1600 1000"><rect width="100%" height="100%" fill="%23f1f5f9"/><text x="50%" y="50%" font-family="sans-serif" font-size="24" fill="%2394a3b8" text-anchor="middle" dominant-baseline="middle">Dashboard Screenshot Pending</text></svg>';
-                    }}
-                  />
+                {/* Screenshot Container Mockup */}
+                <div className="relative aspect-[16/10] bg-gray-50 p-6 flex gap-4 overflow-hidden">
+                  {/* Sidebar Mock */}
+                  <div className="w-48 hidden md:flex flex-col gap-2">
+                    <div className="h-8 bg-brand-100/50 rounded-md mb-4 border border-brand-200"></div>
+                    <div className="h-6 bg-gray-200 rounded-md w-3/4"></div>
+                    <div className="h-6 bg-gray-200 rounded-md w-1/2"></div>
+                    <div className="h-6 bg-gray-200 rounded-md w-2/3"></div>
+                  </div>
+                  {/* Kanban Columns */}
+                  <div className="flex-1 grid grid-cols-3 gap-4">
+                    {/* To Do */}
+                    <div className="bg-gray-100/50 rounded-lg p-3 flex flex-col gap-3">
+                      <div className="h-4 w-16 bg-gray-300 rounded mb-2"></div>
+                      <div className="bg-white p-3 rounded shadow-sm border border-gray-100">
+                        <div className="h-3 w-12 bg-red-100 rounded-full mb-3"></div>
+                        <div className="h-4 w-full bg-gray-200 rounded mb-2"></div>
+                        <div className="h-4 w-2/3 bg-gray-200 rounded"></div>
+                      </div>
+                      <div className="bg-white p-3 rounded shadow-sm border border-gray-100">
+                        <div className="h-3 w-12 bg-green-100 rounded-full mb-3"></div>
+                        <div className="h-4 w-5/6 bg-gray-200 rounded mb-2"></div>
+                      </div>
+                    </div>
+                    {/* In Progress */}
+                    <div className="bg-gray-100/50 rounded-lg p-3 flex flex-col gap-3">
+                      <div className="h-4 w-24 bg-brand-200 rounded mb-2"></div>
+                      <div className="bg-white p-3 rounded shadow-sm border border-brand-100 ring-1 ring-brand-500/20">
+                        <div className="h-3 w-12 bg-yellow-100 rounded-full mb-3"></div>
+                        <div className="h-4 w-full bg-gray-200 rounded mb-2"></div>
+                        <div className="h-4 w-1/2 bg-gray-200 rounded"></div>
+                      </div>
+                    </div>
+                    {/* Done */}
+                    <div className="bg-gray-100/50 rounded-lg p-3 flex flex-col gap-3">
+                      <div className="h-4 w-16 bg-green-200 rounded mb-2"></div>
+                      <div className="bg-white p-3 rounded shadow-sm border border-gray-100 opacity-70">
+                        <div className="h-3 w-12 bg-gray-200 rounded-full mb-3"></div>
+                        <div className="h-4 w-full bg-gray-200 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>

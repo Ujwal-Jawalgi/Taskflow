@@ -220,26 +220,76 @@ export default function DashboardPage() {
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600"></div>
           </div>
         ) : tasks.length === 0 ? (
-          <div className="flex-1 flex flex-col items-center justify-center p-12 bg-white rounded-lg border border-gray-200 border-dashed">
-            <div className="bg-gray-50 p-3 rounded-full mb-4">
-              <Plus className="h-8 w-8 text-gray-400" />
+          <div className="flex-1 flex flex-col items-center justify-center p-12 bg-white rounded-lg border border-gray-200 border-dashed relative overflow-hidden">
+            {/* Background pattern */}
+            <div
+              className="absolute inset-0 opacity-[0.03] pointer-events-none"
+              style={{
+                backgroundImage: "radial-gradient(#000 1px, transparent 1px)",
+                backgroundSize: "24px 24px",
+              }}
+            ></div>
+
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="bg-brand-50 p-4 rounded-full mb-6">
+                <Plus className="h-10 w-10 text-brand-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Welcome to your clean slate!
+              </h3>
+              <p className="text-gray-500 max-w-md text-center mb-8 text-lg">
+                {filters.status || filters.priority
+                  ? "Try adjusting your filters to see more tasks."
+                  : "You have no tasks yet. Create a task to start organizing your workflow."}
+              </p>
+
+              {!filters.status && !filters.priority && (
+                <div className="w-full max-w-2xl bg-gray-50/80 rounded-xl p-6 border border-gray-100 mb-8 backdrop-blur-sm">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wider text-center">
+                    Example tasks you could create
+                  </h4>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <div className="bg-white p-4 rounded-lg border border-red-100 shadow-sm opacity-70">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="w-2 h-2 rounded-full bg-red-400"></span>
+                        <span className="text-xs font-semibold text-red-700">
+                          High Priority
+                        </span>
+                      </div>
+                      <p className="text-sm text-gray-800 font-medium">
+                        Finalize Q3 Marketing Budget
+                      </p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        Due: Tomorrow
+                      </p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm opacity-70">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="w-2 h-2 rounded-full bg-green-400"></span>
+                        <span className="text-xs font-semibold text-green-700">
+                          Low Priority
+                        </span>
+                      </div>
+                      <p className="text-sm text-gray-800 font-medium">
+                        Read new design guidelines
+                      </p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        Due: Next Week
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {!filters.status && !filters.priority && (
+                <button
+                  onClick={openCreateModal}
+                  className="inline-flex items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors"
+                >
+                  <Plus className="h-5 w-5 mr-2" /> Create your first task
+                </button>
+              )}
             </div>
-            <h3 className="text-lg font-semibold text-gray-900">
-              No tasks found
-            </h3>
-            <p className="mt-1 text-sm text-gray-500 max-w-sm text-center mb-6">
-              {filters.status || filters.priority
-                ? "Try adjusting your filters to see more tasks."
-                : "Get started by creating a new task and organizing your workflow."}
-            </p>
-            {!filters.status && !filters.priority && (
-              <button
-                onClick={openCreateModal}
-                className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-brand-700 bg-brand-100 hover:bg-brand-200"
-              >
-                Create your first task
-              </button>
-            )}
           </div>
         ) : (
           <div className="flex-1 flex flex-col">

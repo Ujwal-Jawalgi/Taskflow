@@ -25,18 +25,11 @@
     --color-warning: #b45309; /* Stitch suggested warm amber */
     --color-error: #ba1a1a;   /* Stitch suggested rose crimson */
   }
+}
 
-  .dark {
-    --color-background: #0f172a;
-    --color-surface: #1e293b;
-    --color-text-primary: #f8fafc;
-    --color-text-secondary: #94a3b8;
-    --color-border: #334155;
-    --color-accent: #38bdf8;
-    --color-accent-hover: #7dd3fc;
-    --color-success: #4ade80;
-    --color-warning: #fbbf24;
-  }
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
 }
 
 body {
