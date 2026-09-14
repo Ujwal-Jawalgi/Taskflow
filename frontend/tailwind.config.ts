@@ -22,19 +22,19 @@ const config: Config = {
           200: "#c7d2fe",
           300: "#a5b4fc",
           400: "#818cf8",
-          500: "var(--color-accent)",
-          600: "var(--color-accent)",
-          700: "var(--color-accent-hover)",
-          800: "var(--color-accent-hover)",
+          500: "var(--color-primary)",
+          600: "var(--color-primary)",
+          700: "var(--color-primary-hover)",
+          800: "var(--color-primary-hover)",
           900: "var(--color-background)", // used for Feature 2 background
           950: "#1e1b4b",
         },
         brand: {
           50: "var(--color-background)",
           100: "var(--color-background)",
-          500: "var(--color-accent-hover)",
-          600: "var(--color-accent)",
-          700: "var(--color-accent-hover)",
+          500: "var(--color-primary-hover)",
+          600: "var(--color-primary)",
+          700: "var(--color-primary-hover)",
           900: "var(--color-text-primary)",
         },
         neutral: {
@@ -63,13 +63,13 @@ const config: Config = {
           900: "var(--color-text-primary)",
         },
         accent: {
-          DEFAULT: "var(--color-accent)",
-          hover: "var(--color-accent-hover)",
+          DEFAULT: "var(--color-primary)",
+          hover: "var(--color-primary-hover)",
         },
         priority: {
           low: "#3b82f6",
           medium: "var(--color-warning)",
-          high: "var(--color-warning)",
+          high: "var(--color-error)",
         },
         green: {
           100: "var(--color-border)",

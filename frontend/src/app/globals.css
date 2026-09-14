@@ -4,15 +4,26 @@
 
 @layer base {
   :root {
-    --color-background: #FAFAF9;
-    --color-surface: #FFFFFF;
-    --color-text-primary: #111827;
-    --color-text-secondary: #4B5563;
-    --color-border: #E5E7EB;
-    --color-accent: #1E3A5F;
-    --color-accent-hover: #152B47;
-    --color-success: #166534;
-    --color-warning: #92400E;
+    /* Base Backgrounds (Warm organic stone) */
+    --color-background: #fff8f5;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f0e6e0;
+    
+    /* Text Colors (Deep slate/navy hierarchy) */
+    --color-text-primary: #1f1b17;
+    --color-text-secondary: #43474e;
+    
+    /* Borders and Dividers */
+    --color-border: #eae1da;
+    
+    /* Primary Accents (Rich navy/indigo) */
+    --color-primary: #1e3a5f;
+    --color-primary-hover: #022448;
+    
+    /* Status Colors */
+    --color-success: #166534; /* Keep existing muted success */
+    --color-warning: #b45309; /* Stitch suggested warm amber */
+    --color-error: #ba1a1a;   /* Stitch suggested rose crimson */
   }
 
   .dark {
