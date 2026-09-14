@@ -135,7 +135,8 @@ export default function TermsOfServicePage() {
 
       <footer className="border-t border-neutral-100 bg-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-neutral-500">
-          © {new Date().getFullYear()} TaskFlow Inc. All rights reserved.
+          © {new Date().getFullYear()} TaskFlow Inc by Ujwal. All rights
+          reserved.
         </div>
       </footer>
     </div>
